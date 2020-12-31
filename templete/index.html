@@ -1,0 +1,87 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!doctype html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Green Opticals</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}"  type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mobile.css' %}">
+	<script src="{% static 'js/mobile.js' %}" type="text/javascript"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div>
+				<a href="index.html" class="logo"><img src="{% static 'images/logo.png' %}" alt=""></a>
+				<ul id="navigation">
+					<li class="selected">
+						<a href="index.html">Home</a>
+					</li>
+					<li class="menu">
+						<a href="product.html">Product</a>
+					</li>
+					<li class="menu">
+						<a href="contact.html">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		{% for i in homcon %}
+		<div id="body" class="home">
+			<div class="header">
+				<img src="{{i.bg_img_1026x660.url}}" alt="">
+				<div>
+					<a href="product.html">{{i.offers}}</a>
+				</div>
+			</div>
+			<div class="body">
+				<div>
+					<div>
+						<h1>{{i.pd_title}}</h1>
+						<h2>{{i.pd_name}}</h2>
+						<p>{{i.pd_disc}}</p>
+					</div>
+					<img src="{{i.pd_img_330x260.url}}" alt="">
+				</div>
+			</div>
+			{% endfor %}
+			<div class="footer">
+				<div>
+					<ul>
+						<li>
+							<a href="product.html" class="product"></a>
+							<h1>PRODUCTS</h1>
+						</li>
+						<li>
+							<a href="about.html" class="about"></a>
+							<h1>OUR STORY</h1>
+						</li>
+						<li>
+							<a href="product.html" class="flavor"></a>
+							<h1>FLAVORS</h1>
+						</li>
+						<li>
+							<a href="contact.html" class="contact"></a>
+							<h1>OUR LOCATION</h1>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<div class="connect">
+					<a href="http://freewebsitetemplates.com/go/facebook/" class="facebook">facebook</a>
+					<a href="http://freewebsitetemplates.com/go/twitter/" class="twitter">twitter</a>
+					<a href="http://freewebsitetemplates.com/go/googleplus/" class="googleplus">googleplus</a>
+					<a href="http://pinterest.com/fwtemplates/" class="pinterest">pinterest</a>
+				</div>
+				<p>&copy; 2023 Green Opticals. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

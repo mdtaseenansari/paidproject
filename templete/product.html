@@ -1,0 +1,74 @@
+{% load static %}
+<!doctype html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>product - Frozen Yogurt Shop</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mobile.css' %}">
+	<script src="{% static 'js/mobile.js' %}" type="text/javascript"></script>
+</head>
+<body>
+	<div id="page">
+		<div id="header">
+			<div>
+				<a href="index.html" class="logo"><img src="{% static 'images/logo.png' %}" alt=""></a>
+				<ul id="navigation">
+					<li class="selected">
+						<a href="index.html">Home</a>
+					</li>
+					<li class="menu">
+						<a href="product.html">Product</a>
+					</li>
+					<li class="menu">
+						<a href="contact.html">Contact</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<div id="body">
+			<div class="header">
+				<div>
+					<h1>Products</h1>
+				</div>
+			</div>
+			<div>
+				<ul>
+					{% for add in adds %}
+					<li>
+						<h1>{{add.pd_catogory}}</h1>
+						<p>{{add.pd_detail}}</p>
+					</li>
+					<li>
+						<img src="{{add.pd_img_1_220x245.url}}" alt="">
+						<h2>{{add.pd_name1}}</h2>
+					</li>
+					<li>
+						<img src="{{add.pd_img_2_220x245.url}}" alt="">
+						<h2>{{add.pd_name2}}</h2>
+					</li>
+					<li>
+						<img src="{{add.pd_img_3_220x245.url}}" alt="">
+						<h2>{{add.pd_name3}}</h2>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div id="footer">
+			<div>
+				<div class="connect">
+					<a href="http://freewebsitetemplates.com/go/facebook/" class="facebook">facebook</a>
+					<a href="http://freewebsitetemplates.com/go/twitter/" class="twitter">twitter</a>
+					<a href="http://freewebsitetemplates.com/go/googleplus/" class="googleplus">googleplus</a>
+					<a href="http://pinterest.com/fwtemplates/" class="pinterest">pinterest</a>
+				</div>
+				<p>&copy; 2023 Freeeze. All Rights Reserved.</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
